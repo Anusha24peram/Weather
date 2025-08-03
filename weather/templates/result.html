@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Data Result</title>
+</head>
+<body>
+    <h1>Weather Data Preview</h1>
+    <p><strong>Original Shape:</strong> {{ shape_before }}</p>
+
+    <h2>Head</h2>
+    {{ head|safe }}
+
+    <h2>Tail</h2>
+    {{ tail|safe }}
+
+    <h2>Statistics</h2>
+    {{ describe|safe }}
+
+    <h2>Missing Values (After Replacing Zeros)</h2>
+    <ul>
+        <li>Precipitation: {{ missing_counts.precipitation }}</li>
+        <li>Temp Max: {{ missing_counts.temp_max }}</li>
+        <li>Temp Min: {{ missing_counts.temp_min }}</li>
+        <li>Wind: {{ missing_counts.wind }}</li>
+    </ul>
+
+    <h2>Scaled Feature Values (First 5 Rows)</h2>
+    <pre>{{ x_scaled }}</pre>
+
+    <h2>Target Values (Y) – First 5</h2>
+    <pre>{{ y }}</pre>
+</body>
+</html>
+
